@@ -9,40 +9,57 @@ export default function AnalyticsTracker() {
     useEffect(() => {
         if (pathname?.startsWith('/admin')) return;
 
-        const consent = localStorage.getItem('atomus_cookie_consent');
-        if (consent !== 'true') return;
+        let cleanupTracker: (() => void) | null = null;
 
-        const userAgent = window.navigator.userAgent;
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-        const device = isMobile ? 'mobile' : 'desktop';
+        const startTracking = () => {
+            const consent = localStorage.getItem('atomus_cookie_consent');
+            if (consent !== 'true') return false;
 
-        // 1. Send pageview
-        fetch('/api/analytics', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ eventType: 'pageview', path: pathname, device })
-        }).catch(() => { });
+            const userAgent = window.navigator.userAgent;
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+            const device = isMobile ? 'mobile' : 'desktop';
 
-        // 2. Track time spent
-        const startTime = Date.now();
+            fetch('/api/analytics', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ eventType: 'pageview', path: pathname, device })
+            }).catch(() => { });
 
-        const sendTimeOnPage = () => {
-            const duration = Math.round((Date.now() - startTime) / 1000);
-            if (duration > 0) {
-                const data = JSON.stringify({ eventType: 'time_on_page', path: pathname, device, duration });
-                if (navigator.sendBeacon) {
-                    navigator.sendBeacon('/api/analytics', data);
-                } else {
-                    fetch('/api/analytics', { method: 'POST', keepalive: true, body: data }).catch(() => { });
+            const startTime = Date.now();
+            const sendTimeOnPage = () => {
+                const duration = Math.round((Date.now() - startTime) / 1000);
+                if (duration > 0) {
+                    const data = JSON.stringify({ eventType: 'time_on_page', path: pathname, device, duration });
+                    if (navigator.sendBeacon) {
+                        navigator.sendBeacon('/api/analytics', data);
+                    } else {
+                        fetch('/api/analytics', { method: 'POST', keepalive: true, body: data }).catch(() => { });
+                    }
                 }
+            };
+
+            window.addEventListener('beforeunload', sendTimeOnPage);
+            cleanupTracker = () => {
+                sendTimeOnPage();
+                window.removeEventListener('beforeunload', sendTimeOnPage);
+            };
+
+            return true;
+        };
+
+        const isTracking = startTracking();
+
+        const handleConsent = () => {
+            if (!cleanupTracker) {
+                startTracking();
             }
         };
 
-        window.addEventListener('beforeunload', sendTimeOnPage);
+        window.addEventListener('cookie_consent_accepted', handleConsent);
 
         return () => {
-            sendTimeOnPage();
-            window.removeEventListener('beforeunload', sendTimeOnPage);
+            window.removeEventListener('cookie_consent_accepted', handleConsent);
+            if (cleanupTracker) cleanupTracker();
         };
     }, [pathname]);
 

@@ -1,6 +1,7 @@
 import { captureLead } from '../admin/actions';
 
-export default function ContatoPage({ searchParams }: { searchParams: { sucesso?: string } }) {
+export default async function ContatoPage(props: { searchParams: Promise<{ sucesso?: string }> }) {
+    const searchParams = await props.searchParams;
     return (
         <main>
             <section className="section section-dark" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
@@ -61,7 +62,15 @@ export default function ContatoPage({ searchParams }: { searchParams: { sucesso?
             {/* Footer Reuse */}
             <footer className="footer" style={{ marginTop: '0' }}>
                 <div className="container text-center">
-                    <p>&copy; {new Date().getFullYear()} ATOMUS Instituto de Desenvolvimento Empresarial.</p>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                        <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} ATOMUS Instituto de Desenvolvimento Empresarial.</p>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: 0.7 }}>
+                            <span style={{ fontSize: '0.8rem' }}>Desenvolvido por</span>
+                            <a href="https://hareware.com.br" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
+                                <img src="/hareware.png" alt="Hareware" style={{ height: '16px', width: 'auto' }} />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </footer>
         </main>

@@ -3,7 +3,8 @@ import DeleteButton from '@/components/DeleteButton';
 import Pagination from '@/components/Pagination';
 import { deleteLead } from '../actions';
 
-export default async function LeadsAdminPage({ searchParams }: { searchParams: { page?: string } }) {
+export default async function LeadsAdminPage(props: { searchParams: Promise<{ page?: string }> }) {
+    const searchParams = await props.searchParams;
     const pageNumber = parseInt(searchParams.page || '1', 10) || 1;
     const itemsPerPage = 8;
 

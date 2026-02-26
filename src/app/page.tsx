@@ -115,7 +115,7 @@ export default function Home() {
               <h4 style={{ color: 'var(--text-white)' }}>Institucional</h4>
               <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem', display: 'grid', gap: '0.5rem' }}>
                 <li><Link href="/sobre" style={{ fontSize: '0.9rem' }}>Sobre Nós</Link></li>
-                <li><Link href="/merilyn-bento" style={{ fontSize: '0.9rem' }}>Merilyn Bento</Link></li>
+                <li><Link href="/merylin-bento" style={{ fontSize: '0.9rem' }}>Merylin Bento</Link></li>
                 <li><Link href="/noticias" style={{ fontSize: '0.9rem' }}>Notícias</Link></li>
               </ul>
             </div>
@@ -128,8 +128,14 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', textAlign: 'center', fontSize: '0.8rem' }}>
-            &copy; {new Date().getFullYear()} ATOMUS Instituto de Desenvolvimento Empresarial. Todos os direitos reservados.
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', fontSize: '0.8rem' }}>
+            <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} ATOMUS Instituto de Desenvolvimento Empresarial. Todos os direitos reservados.</p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: 0.7 }}>
+              <span>Desenvolvido por</span>
+              <a href="https://hareware.com.br" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
+                <img src="/hareware.png" alt="Hareware" style={{ height: '16px', width: 'auto' }} />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

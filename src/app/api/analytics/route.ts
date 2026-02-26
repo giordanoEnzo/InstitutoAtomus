@@ -3,7 +3,8 @@ import prisma from '@/lib/prisma';
 
 export async function POST(req: Request) {
     try {
-        const body = await req.json();
+        const text = await req.text();
+        const body = JSON.parse(text);
         const cookieHeader = req.headers.get('cookie');
 
         let sessionId = null;

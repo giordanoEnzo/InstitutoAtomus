@@ -17,13 +17,13 @@ export default function NovoEbookPage() {
                 </div>
 
                 <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>URL da Imagem da Capa</label>
-                    <input name="coverUrl" required type="url" placeholder="https://dominio.com/capa.jpg" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px' }} />
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Imagem da Capa (Upload)</label>
+                    <input name="cover" required type="file" accept="image/*" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: '#fff', cursor: 'pointer' }} />
                 </div>
 
                 <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>URL do Arquivo (PDF Ex: Google Drive/S3)</label>
-                    <input name="fileUrl" required type="url" placeholder="https://dominio.com/ebook.pdf" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px' }} />
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Arquivo do E-book (PDF)</label>
+                    <input name="file" required type="file" accept=".pdf,application/pdf" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: '#fff', cursor: 'pointer' }} />
                 </div>
 
                 <button type="submit" className="btn btn-primary" style={{ marginTop: '1rem', padding: '1rem' }}>CADASTRAR E-BOOK</button>

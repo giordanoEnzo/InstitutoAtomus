@@ -22,8 +22,8 @@ export default function NovaNoticiaPage() {
                 </div>
 
                 <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>URL da Imagem de Capa</label>
-                    <input name="imageUrl" type="url" placeholder="Ex: https://dominio.com/foto.jpg" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px' }} />
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Imagem de Capa (Upload)</label>
+                    <input name="image" type="file" accept="image/*" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: '#fff', cursor: 'pointer' }} />
                 </div>
 
                 <div>

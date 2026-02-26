@@ -24,11 +24,6 @@ export default function AdminSidebar() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/admin/merilyn-bento" style={{ display: 'block', padding: '1rem 2rem', color: 'var(--text-secondary)' }}>
-                        Página Merilyn Bento
-                    </Link>
-                </li>
-                <li>
                     <Link href="/admin/noticias" style={{ display: 'block', padding: '1rem 2rem', color: 'var(--text-secondary)' }}>
                         Gestão de Notícias
                     </Link>

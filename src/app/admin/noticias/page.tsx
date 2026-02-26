@@ -4,7 +4,8 @@ import DeleteButton from '@/components/DeleteButton';
 import Pagination from '@/components/Pagination';
 import { deleteNews } from '../actions';
 
-export default async function NoticiasAdminPage({ searchParams }: { searchParams: { page?: string } }) {
+export default async function NoticiasAdminPage(props: { searchParams: Promise<{ page?: string }> }) {
+    const searchParams = await props.searchParams;
     const pageNumber = parseInt(searchParams.page || '1', 10) || 1;
     const itemsPerPage = 8;
 

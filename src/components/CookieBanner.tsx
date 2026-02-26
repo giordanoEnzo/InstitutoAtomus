@@ -16,6 +16,7 @@ export default function CookieBanner() {
     const handleAccept = () => {
         localStorage.setItem('atomus_cookie_consent', 'true');
         setAccepted(true);
+        window.dispatchEvent(new Event('cookie_consent_accepted'));
     };
 
     if (accepted) return null;
