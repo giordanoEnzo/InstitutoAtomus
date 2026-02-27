@@ -4,7 +4,7 @@ export async function POST(request: Request) {
     const { username, password } = await request.json();
 
     // Basic hardcoded check
-    if (username === 'admin' && password === 'atomus123') {
+    if (username === 'merylin' && password === 'matomus@2026') {
         const response = NextResponse.json({ success: true });
 
         // Set 7-day cookie
