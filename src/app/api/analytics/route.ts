@@ -24,6 +24,8 @@ export async function POST(req: Request) {
                 device: body.device || 'unknown',
                 sessionId: sessionId,
                 duration: body.duration ? parseInt(body.duration, 10) : null,
+                elementId: body.elementId || null,
+                source: body.source || null,
             }
         });
 

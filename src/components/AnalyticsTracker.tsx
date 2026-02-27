@@ -39,9 +39,42 @@ export default function AnalyticsTracker() {
             };
 
             window.addEventListener('beforeunload', sendTimeOnPage);
+
+            const handleGlobalClick = (e: MouseEvent) => {
+                const target = e.target as HTMLElement;
+                if (!target || !target.closest) return;
+
+                const clickable = target.closest('button, a, [role="button"]');
+                if (clickable) {
+                    const _id = clickable.id || '';
+                    let _text = clickable.textContent || '';
+                    _text = _text.substring(0, 50).trim();
+
+                    let url = '';
+                    if (clickable.tagName.toLowerCase() === 'a') {
+                        url = (clickable as HTMLAnchorElement).href || '';
+                    }
+
+                    fetch('/api/analytics', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            eventType: 'click',
+                            path: window.location.pathname,
+                            elementId: _id || _text || 'unknown_element',
+                            source: url,
+                            device
+                        })
+                    }).catch(() => { });
+                }
+            };
+
+            window.addEventListener('click', handleGlobalClick);
+
             cleanupTracker = () => {
                 sendTimeOnPage();
                 window.removeEventListener('beforeunload', sendTimeOnPage);
+                window.removeEventListener('click', handleGlobalClick);
             };
 
             return true;
