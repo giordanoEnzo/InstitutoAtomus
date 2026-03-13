@@ -22,7 +22,8 @@ export async function createNews(formData: FormData) {
             const bytes = await image.arrayBuffer();
             const buffer = Buffer.from(bytes);
             const fileName = `${Date.now()}-${image.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
-            const uploadDir = path.join(process.cwd(), 'public/uploads');
+            const rootDir = process.platform === 'linux' ? '/home/hwadmin/InstitutoAtomus' : process.cwd();
+            const uploadDir = path.join(rootDir, 'public/uploads');
             
             if (!fs.existsSync(uploadDir)) {
                 fs.mkdirSync(uploadDir, { recursive: true });
@@ -72,7 +73,8 @@ export async function updateNews(formData: FormData) {
             const bytes = await image.arrayBuffer();
             const buffer = Buffer.from(bytes);
             const fileName = `${Date.now()}-${image.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
-            const uploadDir = path.join(process.cwd(), 'public/uploads');
+            const rootDir = process.platform === 'linux' ? '/home/hwadmin/InstitutoAtomus' : process.cwd();
+            const uploadDir = path.join(rootDir, 'public/uploads');
             
             if (!fs.existsSync(uploadDir)) {
                 fs.mkdirSync(uploadDir, { recursive: true });
@@ -121,7 +123,8 @@ export async function createEbook(formData: FormData) {
 
         let coverUrl = null;
         const cover = formData.get('cover');
-        const uploadDir = path.join(process.cwd(), 'public/uploads');
+        const rootDir = process.platform === 'linux' ? '/home/hwadmin/InstitutoAtomus' : process.cwd();
+        const uploadDir = path.join(rootDir, 'public/uploads');
         
         if (!fs.existsSync(uploadDir)) {
             fs.mkdirSync(uploadDir, { recursive: true });
@@ -175,7 +178,8 @@ export async function updateEbook(formData: FormData) {
         let coverUrl = currentEbook?.coverUrl || null;
         let fileUrl = currentEbook?.fileUrl || '';
 
-        const uploadDir = path.join(process.cwd(), 'public/uploads');
+        const rootDir = process.platform === 'linux' ? '/home/hwadmin/InstitutoAtomus' : process.cwd();
+        const uploadDir = path.join(rootDir, 'public/uploads');
         if (!fs.existsSync(uploadDir)) {
             fs.mkdirSync(uploadDir, { recursive: true });
         }

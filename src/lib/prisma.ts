@@ -3,8 +3,10 @@ import path from 'path'
 
 const prismaClientSingleton = () => {
   // For SQLite in Next.js, absolute paths are most reliable.
-  // We build it relative to the process root at runtime.
-  const dbPath = path.join(process.cwd(), 'prisma', 'dev.db')
+  // Prioritize the server path provided by the user if it exists.
+  const isServer = process.platform === 'linux';
+  const rootDir = isServer ? '/home/hwadmin/InstitutoAtomus' : process.cwd();
+  const dbPath = path.join(rootDir, 'prisma', 'dev.db')
   
   return new PrismaClient({
     datasources: {
