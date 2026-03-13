@@ -1,8 +1,8 @@
 import prisma from '@/lib/prisma';
 import Link from 'next/link';
+import FooterMain from '@/components/FooterMain';
 
 export const dynamic = 'force-dynamic';
-import FooterMain from '@/components/FooterMain';
 
 export const metadata = {
     title: 'Notícias e Artigos | ATOMUS',
