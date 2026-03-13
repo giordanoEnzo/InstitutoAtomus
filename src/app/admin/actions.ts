@@ -7,32 +7,43 @@ import fs from 'fs';
 import path from 'path';
 
 export async function createNews(formData: FormData) {
-    const title = formData.get('title') as string;
-    const subtitle = formData.get('subtitle') as string;
-    const content = formData.get('content') as string;
-    const author = formData.get('author') as string;
+    try {
+        const title = formData.get('title') as string;
+        const subtitle = formData.get('subtitle') as string;
+        const content = formData.get('content') as string;
+        const author = formData.get('author') as string;
 
-    let imageUrl = '';
-    const image = formData.get('image') as File | null;
+        let imageUrl = null;
+        const image = formData.get('image');
 
-    if (image && image.name) {
-        const bytes = await image.arrayBuffer();
-        const buffer = Buffer.from(bytes);
-        const fileName = `${Date.now()}-${image.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
-        const filePath = path.join(process.cwd(), 'public/uploads', fileName);
-        fs.writeFileSync(filePath, buffer);
-        imageUrl = `/uploads/${fileName}`;
-    }
-
-    await prisma.news.create({
-        data: {
-            title,
-            subtitle,
-            content,
-            author,
-            imageUrl,
+        if (image instanceof File && image.name && image.size > 0) {
+            const bytes = await image.arrayBuffer();
+            const buffer = Buffer.from(bytes);
+            const fileName = `${Date.now()}-${image.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
+            const uploadDir = path.join(process.cwd(), 'public/uploads');
+            
+            if (!fs.existsSync(uploadDir)) {
+                fs.mkdirSync(uploadDir, { recursive: true });
+            }
+            
+            const filePath = path.join(uploadDir, fileName);
+            fs.writeFileSync(filePath, buffer);
+            imageUrl = `/uploads/${fileName}`;
         }
-    });
+
+        await prisma.news.create({
+            data: {
+                title,
+                subtitle: subtitle || null,
+                content,
+                author: author || null,
+                imageUrl: imageUrl,
+            }
+        });
+    } catch (error) {
+        console.error('SERVER_ACTION_ERROR (createNews):', error);
+        throw error; // Rethrow so Next.js handles the redirect error correctly if it's a redirect
+    }
 
     revalidatePath('/admin/noticias');
     revalidatePath('/noticias');
@@ -48,39 +59,50 @@ export async function deleteNews(id: number) {
 }
 
 export async function createEbook(formData: FormData) {
-    const title = formData.get('title') as string;
-    const description = formData.get('description') as string;
+    try {
+        const title = formData.get('title') as string;
+        const description = formData.get('description') as string;
 
-    let coverUrl = '';
-    const cover = formData.get('cover') as File | null;
-    if (cover && cover.name) {
-        const bytes = await cover.arrayBuffer();
-        const buffer = Buffer.from(bytes);
-        const fileName = `${Date.now()}-cover-${cover.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
-        const filePath = path.join(process.cwd(), 'public/uploads', fileName);
-        fs.writeFileSync(filePath, buffer);
-        coverUrl = `/uploads/${fileName}`;
-    }
-
-    let fileUrl = '';
-    const file = formData.get('file') as File | null;
-    if (file && file.name) {
-        const bytes = await file.arrayBuffer();
-        const buffer = Buffer.from(bytes);
-        const fileName = `${Date.now()}-file-${file.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
-        const filePath = path.join(process.cwd(), 'public/uploads', fileName);
-        fs.writeFileSync(filePath, buffer);
-        fileUrl = `/uploads/${fileName}`;
-    }
-
-    await prisma.ebook.create({
-        data: {
-            title,
-            description,
-            coverUrl,
-            fileUrl,
+        let coverUrl = null;
+        const cover = formData.get('cover');
+        const uploadDir = path.join(process.cwd(), 'public/uploads');
+        
+        if (!fs.existsSync(uploadDir)) {
+            fs.mkdirSync(uploadDir, { recursive: true });
         }
-    });
+
+        if (cover instanceof File && cover.name && cover.size > 0) {
+            const bytes = await cover.arrayBuffer();
+            const buffer = Buffer.from(bytes);
+            const fileName = `${Date.now()}-cover-${cover.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
+            const filePath = path.join(uploadDir, fileName);
+            fs.writeFileSync(filePath, buffer);
+            coverUrl = `/uploads/${fileName}`;
+        }
+
+        let fileUrl = '';
+        const file = formData.get('file');
+        if (file instanceof File && file.name && file.size > 0) {
+            const bytes = await file.arrayBuffer();
+            const buffer = Buffer.from(bytes);
+            const fileName = `${Date.now()}-file-${file.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
+            const filePath = path.join(uploadDir, fileName);
+            fs.writeFileSync(filePath, buffer);
+            fileUrl = `/uploads/${fileName}`;
+        }
+
+        await prisma.ebook.create({
+            data: {
+                title,
+                description: description || null,
+                coverUrl,
+                fileUrl,
+            }
+        });
+    } catch (error) {
+        console.error('SERVER_ACTION_ERROR (createEbook):', error);
+        throw error;
+    }
 
     revalidatePath('/admin/ebooks');
     revalidatePath('/biblioteca');
