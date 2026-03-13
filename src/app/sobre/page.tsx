@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import FooterMain from '@/components/FooterMain';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,73 +10,76 @@ export default function SobrePage() {
     return (
         <main>
 
-            {/* Hero */}
-            <section className="section section-dark" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
-                <div className="container text-center animate-fade-in-up">
-                    <div className="divider" style={{ margin: '0 auto 2rem' }}></div>
-                    <h1>Posicionamento & Manifesto</h1>
-                    <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem' }}>
-                        Não somos um grupo de teóricos. Somos construtores de bases governamentais corporativas.
-                    </p>
-                </div>
-            </section>
-
-            <section className="section">
-                <div className="container grid" style={{ gridTemplateColumns: 'minmax(300px, 1fr) 2fr', gap: '4rem' }}>
-                    <div>
-                        <h2 style={{ fontSize: '2.5rem' }}>Fundamentos</h2>
-                        <div className="divider"></div>
+            {/* Manifesto Section */}
+            <section className="section section-brand" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+                <div className="container" style={{ maxWidth: '900px' }}>
+                    <div className="text-center" style={{ marginBottom: '4rem' }}>
+                        <div className="divider" style={{ margin: '0 auto 2rem' }}></div>
+                        <h2 style={{ fontSize: '3rem' }}>Manifesto Átomus</h2>
                     </div>
-                    <div className="grid" style={{ gap: '3rem' }}>
-                        <article>
-                            <h3 className="text-gold">Propósito</h3>
-                            <p>Erradicar o amadorismo e a gestão emocional. Nosso alvo é entregar ferramentas de racionalização empresarial para líderes que desejam comandar equipes com alta performance estrutural.</p>
-                        </article>
-
-                        <article>
-                            <h3 className="text-gold">Missão</h3>
-                            <p>Fornecer conhecimento tático e consultoria estratégica que permita empresas organizarem sua cultura, liderança e processos, crescendo com lucidez e comando claro.</p>
-                        </article>
-
-                        <article>
-                            <h3 className="text-gold">Visão</h3>
-                            <p>Tornar-se a maior referência nacional em metodologias de desenvolvimento empresarial baseadas na ordem, racionalidade e construção deliberada de culturas corporativas vencedoras.</p>
-                        </article>
-
-                        <article>
-                            <h3 className="text-gold">Valores</h3>
-                            <ul style={{ listStyle: 'none', paddingLeft: '1rem', borderLeft: '3px solid var(--brand-gold)' }}>
-                                <li><strong>Razão e Lógica:</strong> Não permitimos que emoções ditem as regras do negócio.</li>
-                                <li><strong>Comando e Firmeza:</strong> Onde há ordem, há previsibilidade.</li>
-                                <li><strong>Excelência Vertical:</strong> Fazer bem feito do topo à base.</li>
-                                <li><strong>Foco em Resultados:</strong> A teoria serve à prática. Se a teoria falha, descartamos a teoria.</li>
-                            </ul>
-                        </article>
-
-                        <article style={{ marginTop: '2rem', padding: '2rem', border: '1px solid var(--brand-gold-dark)', borderRadius: '4px' }}>
-                            <h3>O Manifesto ATOMUS</h3>
-                            <p style={{ fontStyle: 'italic', color: 'var(--text-secondary)' }}>
-                                "Onde falta estrutura, nasce o caos. Onde não há liderança forte, grupos sucumbem ao instinto de sobrevivência primário, criando disputas infundadas. A empresa não existe para acolher; ela existe para produzir e entregar valor imensurável perante a sociedade, gerando capital. O papel do líder é manter esse motor funcionando com as melhores peças. Nós forjamos essas peças e blindamos esse motor."
-                            </p>
-                        </article>
+                    
+                    <div className="manifesto-content" style={{ fontSize: '1.25rem', lineHeight: '1.8', color: 'white' }}>
+                        <p style={{ fontSize: '1.5rem', fontWeight: '500', marginBottom: '2rem', borderLeft: '4px solid var(--brand-gold)', paddingLeft: '2rem' }}>
+                            Empresas não crescem apenas com estratégia. <br />
+                            Crescem quando pessoas estão estruturadas para sustentar resultados.
+                        </p>
+                        
+                        <p>Vivemos uma nova era no ambiente corporativo, onde produtividade, saúde mental, liderança e cultura organizacional caminham juntas.</p>
+                        
+                        <p style={{ fontWeight: '500', color: 'var(--brand-gold)' }}>Ignorar essa realidade não é apenas um erro de gestão. É um risco para o futuro das empresas.</p>
+                        
+                        <p>A Atomus nasce para responder a esse novo cenário.</p>
+                        
+                        <p>Integramos conhecimento científico, desenvolvimento humano e estratégia empresarial para estruturar organizações mais conscientes, produtivas e sustentáveis.</p>
+                        
+                        <p>Acreditamos que empresas fortes são construídas por líderes preparados, equipes saudáveis e culturas organizacionais sólidas.</p>
+                        
+                        <p>Mais do que treinamentos ou consultorias isoladas, estamos construindo um ecossistema de desenvolvimento empresarial, conectando conhecimento, especialistas, parceiros e ferramentas capazes de apoiar empresas em seus desafios atuais e futuros.</p>
+                        
+                        <p>Nosso compromisso é ajudar organizações a evoluírem com estrutura, inteligência emocional e responsabilidade humana.</p>
+                        
+                        <p style={{ fontSize: '1.5rem', fontWeight: 'bold', textAlign: 'center', marginTop: '3rem', color: 'var(--brand-gold)' }}>
+                            Porque empresas desenvolvidas e pessoas saudáveis produzem resultados extraordinários!
+                        </p>
                     </div>
                 </div>
             </section>
 
-            {/* Footer Reuse */}
-            <footer className="footer" style={{ marginTop: '4rem' }}>
-                <div className="container text-center">
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-                        <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} ATOMUS Instituto de Desenvolvimento Empresarial.</p>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: 0.7 }}>
-                            <span style={{ fontSize: '0.8rem' }}>Desenvolvido por</span>
-                            <a href="https://hareware.com.br" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
-                                <img src="/hareware.png" alt="Hareware" style={{ height: '16px', width: 'auto' }} />
-                            </a>
-                        </div>
+            {/* No que acreditamos Section */}
+            <section className="section section-light">
+                <div className="container">
+                    <div className="text-center" style={{ marginBottom: '4rem' }}>
+                        <h2>No que acreditamos</h2>
+                        <div className="divider" style={{ margin: '1rem auto' }}></div>
+                    </div>
+                    
+                    <div className="grid grid-2" style={{ gap: '2rem' }}>
+                        {[
+                            "Acreditamos que empresas saudáveis constroem sociedades mais fortes.",
+                            "Acreditamos que liderança exige preparo emocional, visão estratégica e responsabilidade humana.",
+                            "Acreditamos que saúde mental no trabalho não é apenas um cuidado individual, mas um compromisso organizacional.",
+                            "Acreditamos que cultura empresarial não se cria por discurso, mas por práticas consistentes.",
+                            "Acreditamos que conhecimento aplicado transforma ambientes de trabalho e potencializa resultados.",
+                            "E acreditamos que o futuro das organizações depende da capacidade de integrar produtividade, desenvolvimento humano e bem-estar."
+                        ].map((belief, index) => (
+                            <div key={index} style={{ padding: '2rem', background: 'white', borderLeft: '4px solid var(--brand-gold)', borderRadius: '0 8px 8px 0', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+                                <p style={{ margin: 0, fontSize: '1.1rem', fontWeight: '500' }}>{belief}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div style={{ marginTop: '4rem', padding: '3rem', background: 'var(--bg-secondary)', borderRadius: '8px', textAlign: 'center' }}>
+                        <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto 1.5rem' }}>
+                            Mais do que oferecer soluções pontuais, o Instituto Atomus busca estruturar empresas para um crescimento consistente, integrando estratégia, pessoas e propósito.
+                        </p>
+                        <p style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--bg-dark)' }}>
+                            Por isso, a Atomus trabalha para fortalecer empresas que desejam crescer com consciência, estrutura e impacto positivo.
+                        </p>
                     </div>
                 </div>
-            </footer>
+            </section>
+
+            <FooterMain />
         </main>
     );
 }

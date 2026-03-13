@@ -1,3 +1,5 @@
+import FooterMain from '@/components/FooterMain';
+
 export const metadata = {
     title: 'Merylin Bento | Especialista | ATOMUS',
 };
@@ -65,19 +67,7 @@ export default function MerylinBentoPage() {
                 </div>
             </section>
 
-            <footer className="footer" style={{ marginTop: '4rem' }}>
-                <div className="container text-center">
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-                        <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} ATOMUS Instituto de Desenvolvimento Empresarial.</p>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: 0.7 }}>
-                            <span style={{ fontSize: '0.8rem' }}>Desenvolvido por</span>
-                            <a href="https://hareware.com.br" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
-                                <img src="/hareware.png" alt="Hareware" style={{ height: '16px', width: 'auto' }} />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <FooterMain />
         </main>
     );
 }

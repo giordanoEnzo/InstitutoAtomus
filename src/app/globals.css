@@ -132,6 +132,7 @@ main>div>.section:first-of-type {
 .section-dark span,
 .section-dark div,
 .section-dark li,
+.section-dark strong,
 .section-dark a {
   color: var(--text-white);
 }
@@ -149,6 +150,7 @@ main>div>.section:first-of-type {
 .section-brand span,
 .section-brand div,
 .section-brand li,
+.section-brand strong,
 .section-brand a {
   color: var(--text-white);
 }
@@ -313,11 +315,31 @@ main>div>.section:first-of-type {
   padding: 4rem 0 2rem;
 }
 
+.footer h1, .footer h2, .footer h3, .footer h4, .footer p, .footer span, .footer div, .footer li, .footer a {
+  color: var(--text-white) !important;
+}
+
+.footer a:hover {
+  color: var(--brand-gold) !important;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 3rem;
   margin-bottom: 3rem;
+}
+
+.force-dark-text, 
+.force-dark-text p, 
+.force-dark-text span, 
+.force-dark-text div, 
+.force-dark-text li, 
+.force-dark-text h1, 
+.force-dark-text h2, 
+.force-dark-text h3, 
+.force-dark-text strong {
+  color: var(--text-primary) !important;
 }
 
 /* Focus/Outline Accessibility */
