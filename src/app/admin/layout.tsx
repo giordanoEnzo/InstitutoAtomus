@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import AdminSidebar from '@/components/AdminSidebar';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
     title: 'Painel Administrativo | ATOMUS',
 };
