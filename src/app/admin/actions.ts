@@ -12,6 +12,8 @@ export async function createNews(formData: FormData) {
         const subtitle = formData.get('subtitle') as string;
         const content = formData.get('content') as string;
         const author = formData.get('author') as string;
+        const metaDesc = formData.get('metaDesc') as string;
+        const publishedAtStr = formData.get('publishedAt') as string;
 
         let imageUrl = null;
         const image = formData.get('image');
@@ -38,6 +40,8 @@ export async function createNews(formData: FormData) {
                 content,
                 author: author || null,
                 imageUrl: imageUrl,
+                metaDesc: metaDesc || null,
+                publishedAt: publishedAtStr ? new Date(publishedAtStr) : null,
             }
         });
     } catch (error) {
@@ -47,6 +51,58 @@ export async function createNews(formData: FormData) {
 
     revalidatePath('/admin/noticias');
     revalidatePath('/noticias');
+    redirect('/admin/noticias');
+}
+
+export async function updateNews(formData: FormData) {
+    try {
+        const id = parseInt(formData.get('id') as string, 10);
+        const title = formData.get('title') as string;
+        const subtitle = formData.get('subtitle') as string;
+        const content = formData.get('content') as string;
+        const author = formData.get('author') as string;
+        const metaDesc = formData.get('metaDesc') as string;
+        const publishedAtStr = formData.get('publishedAt') as string;
+
+        const currentNews = await prisma.news.findUnique({ where: { id } });
+        let imageUrl = currentNews?.imageUrl || null;
+
+        const image = formData.get('image');
+        if (image instanceof File && image.name && image.size > 0) {
+            const bytes = await image.arrayBuffer();
+            const buffer = Buffer.from(bytes);
+            const fileName = `${Date.now()}-${image.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
+            const uploadDir = path.join(process.cwd(), 'public/uploads');
+            
+            if (!fs.existsSync(uploadDir)) {
+                fs.mkdirSync(uploadDir, { recursive: true });
+            }
+            
+            const filePath = path.join(uploadDir, fileName);
+            fs.writeFileSync(filePath, buffer);
+            imageUrl = `/uploads/${fileName}`;
+        }
+
+        await prisma.news.update({
+            where: { id },
+            data: {
+                title,
+                subtitle: subtitle || null,
+                content,
+                author: author || null,
+                imageUrl: imageUrl,
+                metaDesc: metaDesc || null,
+                publishedAt: publishedAtStr ? new Date(publishedAtStr) : null,
+            }
+        });
+    } catch (error) {
+        console.error('SERVER_ACTION_ERROR (updateNews):', error);
+        throw error;
+    }
+
+    revalidatePath('/admin/noticias');
+    revalidatePath('/noticias');
+    revalidatePath(`/noticias/${formData.get('id')}`);
     redirect('/admin/noticias');
 }
 
@@ -101,6 +157,60 @@ export async function createEbook(formData: FormData) {
         });
     } catch (error) {
         console.error('SERVER_ACTION_ERROR (createEbook):', error);
+        throw error;
+    }
+
+    revalidatePath('/admin/ebooks');
+    revalidatePath('/biblioteca');
+    redirect('/admin/ebooks');
+}
+
+export async function updateEbook(formData: FormData) {
+    try {
+        const id = parseInt(formData.get('id') as string, 10);
+        const title = formData.get('title') as string;
+        const description = formData.get('description') as string;
+
+        const currentEbook = await prisma.ebook.findUnique({ where: { id } });
+        let coverUrl = currentEbook?.coverUrl || null;
+        let fileUrl = currentEbook?.fileUrl || '';
+
+        const uploadDir = path.join(process.cwd(), 'public/uploads');
+        if (!fs.existsSync(uploadDir)) {
+            fs.mkdirSync(uploadDir, { recursive: true });
+        }
+
+        const cover = formData.get('cover');
+        if (cover instanceof File && cover.name && cover.size > 0) {
+            const bytes = await cover.arrayBuffer();
+            const buffer = Buffer.from(bytes);
+            const fileName = `${Date.now()}-cover-${cover.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
+            const filePath = path.join(uploadDir, fileName);
+            fs.writeFileSync(filePath, buffer);
+            coverUrl = `/uploads/${fileName}`;
+        }
+
+        const file = formData.get('file');
+        if (file instanceof File && file.name && file.size > 0) {
+            const bytes = await file.arrayBuffer();
+            const buffer = Buffer.from(bytes);
+            const fileName = `${Date.now()}-file-${file.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
+            const filePath = path.join(uploadDir, fileName);
+            fs.writeFileSync(filePath, buffer);
+            fileUrl = `/uploads/${fileName}`;
+        }
+
+        await prisma.ebook.update({
+            where: { id },
+            data: {
+                title,
+                description: description || null,
+                coverUrl,
+                fileUrl,
+            }
+        });
+    } catch (error) {
+        console.error('SERVER_ACTION_ERROR (updateEbook):', error);
         throw error;
     }
 

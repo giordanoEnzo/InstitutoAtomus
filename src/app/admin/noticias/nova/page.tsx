@@ -5,7 +5,7 @@ export default function NovaNoticiaPage() {
         <div style={{ maxWidth: '800px' }}>
             <h1 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Criar Nova Publicação</h1>
 
-            <form action={createNews} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', backgroundColor: 'var(--bg-primary)', padding: '2rem', borderRadius: '4px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+            <form action={createNews} encType="multipart/form-data" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', backgroundColor: 'var(--bg-primary)', padding: '2rem', borderRadius: '4px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
                 <div>
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Título</label>
                     <input name="title" required type="text" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px' }} />
@@ -24,6 +24,17 @@ export default function NovaNoticiaPage() {
                 <div>
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Imagem de Capa (Upload)</label>
                     <input name="image" type="file" accept="image/*" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: '#fff', cursor: 'pointer' }} />
+                </div>
+
+                <div className="grid grid-2">
+                    <div>
+                        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Data de Publicação (Opcional)</label>
+                        <input name="publishedAt" type="date" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px' }} />
+                    </div>
+                    <div>
+                        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Descrição Curta (SEO)</label>
+                        <input name="metaDesc" type="text" placeholder="Breve resumo para o Google" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px' }} />
+                    </div>
                 </div>
 
                 <div>

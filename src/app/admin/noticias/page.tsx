@@ -47,7 +47,8 @@ export default async function NoticiasAdminPage(props: { searchParams: Promise<{
                                 <td style={{ padding: '1rem' }}>{item.title}</td>
                                 <td style={{ padding: '1rem' }}>{item.author || '-'}</td>
                                 <td style={{ padding: '1rem' }}>{new Date(item.createdAt).toLocaleDateString('pt-BR')}</td>
-                                <td style={{ padding: '1rem', textAlign: 'center' }}>
+                                <td style={{ padding: '1rem', textAlign: 'center', display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
+                                    <Link href={`/admin/noticias/editar/${item.id}`} className="btn-secondary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', borderRadius: '4px', textDecoration: 'none' }}>Editar</Link>
                                     <DeleteButton id={item.id} onDelete={deleteNews} />
                                 </td>
                             </tr>

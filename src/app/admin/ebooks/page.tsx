@@ -45,7 +45,8 @@ export default async function EbooksAdminPage(props: { searchParams: Promise<{ p
                             <tr key={ebook.id} style={{ borderBottom: '1px solid #ddd' }}>
                                 <td style={{ padding: '1rem' }}>{ebook.title}</td>
                                 <td style={{ padding: '1rem' }}>{new Date(ebook.createdAt).toLocaleDateString('pt-BR')}</td>
-                                <td style={{ padding: '1rem', textAlign: 'center' }}>
+                                <td style={{ padding: '1rem', textAlign: 'center', display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
+                                    <Link href={`/admin/ebooks/editar/${ebook.id}`} className="btn-secondary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', borderRadius: '4px', textDecoration: 'none' }}>Editar</Link>
                                     <DeleteButton id={ebook.id} onDelete={deleteEbook} />
                                 </td>
                             </tr>

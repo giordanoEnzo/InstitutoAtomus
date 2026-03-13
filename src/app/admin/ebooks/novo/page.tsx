@@ -5,7 +5,7 @@ export default function NovoEbookPage() {
         <div style={{ maxWidth: '800px' }}>
             <h1 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Cadastro de Novo E-book</h1>
 
-            <form action={createEbook} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', backgroundColor: 'var(--bg-primary)', padding: '2rem', borderRadius: '4px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+            <form action={createEbook} encType="multipart/form-data" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', backgroundColor: 'var(--bg-primary)', padding: '2rem', borderRadius: '4px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
                 <div>
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Título do E-book</label>
                     <input name="title" required type="text" style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px' }} />
