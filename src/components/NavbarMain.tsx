@@ -36,6 +36,7 @@ export default function NavbarMain() {
                     <Link href="/" className={pathname === '/' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Home</Link>
                     <Link href="/sobre" className={pathname === '/sobre' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Sobre</Link>
                     <Link href="/nr-1" className={pathname === '/nr-1' ? 'active' : ''} onClick={() => setMenuOpen(false)}>NR-1</Link>
+                    <Link href="/telemedicina" className={pathname === '/telemedicina' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Telemedicina</Link>
                     <Link href="/merylin-bento" className={pathname === '/merylin-bento' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Merylin Bento</Link>
                     <Link href="/noticias" className={pathname === '/noticias' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Notícias</Link>
                     <Link href="/biblioteca" className={pathname === '/biblioteca' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Biblioteca</Link>
