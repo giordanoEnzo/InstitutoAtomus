@@ -128,6 +128,87 @@ export default function NR1Page() {
         </div>
       </section>
 
+      {/* Selo Oficial Átomus Section (Migrated from Home) */}
+      <section className="section section-light" style={{ borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: '4rem' }}>
+            <h2 className="text-gold" style={{ letterSpacing: '2px', fontWeight: 'bold' }}>SELO OFICIAL ÁTOMUS</h2>
+            <h3 style={{ fontSize: '1.75rem', marginTop: '0.5rem' }}>"Certificado de Conformidade em Saúde Mental Corporativa"</h3>
+            <div className="divider" style={{ margin: '1.5rem auto' }}></div>
+          </div>
+
+          <div className="animate-fade-in-up" style={{ display: 'flex', justifyContent: 'center', marginBottom: '4rem' }}>
+            <img 
+              src="/selo-atomus.png" 
+              alt="Certificado de Conformidade Átomus" 
+              style={{ width: '100%', maxWidth: '800px', borderRadius: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }} 
+            />
+          </div>
+
+          <div className="grid grid-1" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div>
+              <p style={{ fontWeight: '500', fontSize: '1.25rem', textAlign: 'center' }}>
+                Esse selo certifica empresas que Implementaram a NR-1 de forma estruturada e desenvolveram liderança ativa na promoção da saúde mental organizacional.
+              </p>
+              <p style={{ textAlign: 'center' }}>
+                Empresas que possuem uma Cultura Mental Consolidada com indicadores, acompanhamento contínuo e programa ativo.
+              </p>
+              <p style={{ fontStyle: 'italic', color: 'var(--brand-gold-dark)', fontWeight: 'bold', textAlign: 'center', fontSize: '1.2rem', marginTop: '1.5rem' }}>
+                “Nosso objetivo é conduzir sua empresa à certificação institucional do Selo Atomus.”
+              </p>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '5rem' }}>
+            <h3 style={{ borderLeft: '4px solid var(--brand-gold)', paddingLeft: '1rem', marginBottom: '2rem' }}>Segurança Jurídica e Prevenção de Riscos Trabalhistas</h3>
+            <div className="grid grid-2">
+              <div>
+                <p>
+                  A implementação de práticas estruturadas de Saúde Mental Corporativa não é apenas uma ação de cuidado humano — é também uma estratégia de gestão de riscos organizacionais.
+                </p>
+                <p>
+                  Empresas que investem na identificação e no gerenciamento de riscos psicossociais no ambiente de trabalho, conforme previsto nas diretrizes da Norma Regulamentadora nº 1 (NR-1), demonstram compromisso com a prevenção, a responsabilidade organizacional e a promoção de ambientes laborais mais seguros.
+                </p>
+              </div>
+              <div style={{ background: 'var(--bg-primary)', padding: '2rem', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+                <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>A certificação do Instituto Atomus reconhece empresas que adotam práticas estruturadas voltadas à:</p>
+                <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem' }}>
+                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Identificação de fatores de risco psicossocial</li>
+                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Promoção da saúde mental no trabalho</li>
+                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Desenvolvimento de lideranças conscientes</li>
+                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Fortalecimento de uma cultura organizacional saudável</li>
+                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Implementação de ações preventivas de bem-estar e gestão emocional</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="section-brand" style={{ marginTop: '4rem', padding: '3rem', borderRadius: '4px' }}>
+            <h3 style={{ color: 'var(--brand-gold)', marginBottom: '2rem' }}>Valor Estratégico da Certificação</h3>
+            <div className="grid grid-2">
+              <p style={{ color: 'white' }}>
+                Ao implementar um programa estruturado de Saúde Mental Corporativa, a empresa passa a possuir um conjunto de práticas que fortalece a governança organizacional e auxilia na gestão de riscos psicossociais.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem' }}>
+                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Evidências documentadas de ações preventivas</li>
+                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Programas de promoção de saúde e bem-estar</li>
+                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Capacitação de lideranças</li>
+                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Registro de iniciativas de cuidado organizacional</li>
+                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Indicadores de gestão relacionados ao clima e saúde emocional</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '3rem', padding: '2rem', border: '1px solid #ddd', borderRadius: '4px', fontSize: '0.9rem', backgroundColor: '#f9f9f9' }}>
+            <p style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--bg-dark)' }}>Observação Institucional</p>
+            <p style={{ margin: 0, color: '#666' }}>
+              A certificação concedida pelo Instituto Atomus reconhece a implementação de práticas estruturadas de promoção da saúde mental no ambiente corporativo.
+              Embora tais iniciativas contribuam para a prevenção de riscos psicossociais e fortalecimento da cultura organizacional, a certificação não substitui as responsabilidades legais da empresa nem constitui garantia de inexistência de demandas judiciais.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Integration with GRO Section */}
       <section className="section">
         <div className="container">
