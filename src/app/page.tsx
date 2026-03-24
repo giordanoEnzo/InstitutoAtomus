@@ -149,7 +149,7 @@ export default function Home() {
         <div className="container text-center">
           <h2 style={{ marginBottom: '1rem' }}>Sua empresa está preparada para a ordem?</h2>
           <p style={{ maxWidth: '600px', margin: '0 auto 3rem', fontSize: '1.125rem' }}>
-            A intervenção da ATOMUS é pontual, assertiva e orientada a results mensuráveis.
+            A intervenção da ATOMUS é pontual, assertiva e orientada a resultados mensuráveis.
             Sem promessas vagas. Com diagnóstico empresarial e execução direcionada.
           </p>
           <Link href="/contato" className="btn btn-primary" style={{ padding: '1.25rem 3rem', fontSize: '1.125rem' }}>
