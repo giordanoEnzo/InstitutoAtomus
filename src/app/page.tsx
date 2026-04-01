@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import FooterMain from '@/components/FooterMain';
+import { GraduationCap, Briefcase } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -125,6 +126,82 @@ export default function Home() {
                 <p style={{ fontSize: '1rem', color: 'var(--text-primary)', marginBottom: 0 }}>{pilar.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Soluções Section */}
+      <section className="section" id="solucoes" style={{ background: 'white' }}>
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: '4rem' }}>
+            <h2 style={{ fontSize: '2.5rem' }}>Soluções Estratégicas</h2>
+            <p style={{ maxWidth: '700px', margin: '1rem auto', fontSize: '1.2rem', color: 'var(--text-primary)' }}>
+              Desenvolvimento humano e organizacional com base em neurociência e gestão de alta performance.
+            </p>
+            <div className="divider" style={{ margin: '1rem auto' }}></div>
+          </div>
+
+          <div className="solutions-container">
+            {/* Treinamentos */}
+            <div className="solution-card">
+              <div className="solution-image">
+                <GraduationCap size={64} strokeWidth={1.5} />
+                <h3 style={{ marginTop: '1.5rem', color: 'var(--brand-gold)' }}>Treinamentos<br />Empresariais</h3>
+              </div>
+              <div className="solution-content">
+                <span className="solution-tag">Desenvolvimento de Pessoas</span>
+                <p style={{ fontSize: '1.1rem', fontWeight: '500', marginBottom: '1rem', color: 'var(--text-secondary)' }}>
+                  Programas práticos para fortalecer lideranças, competências comportamentais e saúde mental corporativa.
+                </p>
+                <ul className="item-list">
+                  <li>Gestão e Liderança Estratégica</li>
+                  <li>Inteligência Emocional no Trabalho</li>
+                  <li>Desenvolvimento de Soft Skills</li>
+                  <li>Atendimento e Experiência do Cliente</li>
+                  <li>Palestras e Programas Especiais</li>
+                  <li>Comunicação Assertiva e Não-Violenta</li>
+                </ul>
+                <div className="format-tags">
+                  <span className="format-tag">Presencial</span>
+                  <span className="format-tag">Online</span>
+                  <span className="format-tag">Workshops</span>
+                  <span className="format-tag">Imersões</span>
+                </div>
+                <Link href="/contato" className="btn btn-primary" style={{ alignSelf: 'flex-start' }}>
+                  Solicitar Proposta
+                </Link>
+              </div>
+            </div>
+
+            {/* Consultoria */}
+            <div className="solution-card">
+              <div className="solution-image" style={{ background: 'var(--bg-dark)' }}>
+                <Briefcase size={64} strokeWidth={1.5} />
+                <h3 style={{ marginTop: '1.5rem', color: 'var(--brand-gold)' }}>Consultoria<br />Empresarial</h3>
+              </div>
+              <div className="solution-content">
+                <span className="solution-tag">Estruturação de Resultados</span>
+                <p style={{ fontSize: '1.1rem', fontWeight: '500', marginBottom: '1rem', color: 'var(--text-secondary)' }}>
+                  Diagnóstico e plano estratégico para empresas que buscam crescer com organização e processos sólidos.
+                </p>
+                <ul className="item-list">
+                  <li>Diagnóstico Organizacional</li>
+                  <li>Estruturação de Lideranças</li>
+                  <li>Implantação de Saúde Mental (NR-1)</li>
+                  <li>Gestão de Riscos Psicossociais</li>
+                  <li>Melhoria da Comunicação Interna</li>
+                  <li>Fortalecimento da Cultura</li>
+                </ul>
+                <div className="format-tags">
+                  <span className="format-tag">Projetos de Curto Prazo</span>
+                  <span className="format-tag">Consultoria Estratégica Mensal</span>
+                  <span className="format-tag">Adequação à NR-1</span>
+                </div>
+                <Link href="/contato" className="btn btn-primary" style={{ alignSelf: 'flex-start' }}>
+                  Solicitar Diagnóstico
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -440,6 +440,108 @@ main>div>.section:first-of-type {
   color: white;
 }
 
+/* Solutions & Services */
+.solutions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.solution-card {
+  background: var(--bg-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.solution-image {
+  background-color: var(--bg-brand);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-gold);
+  padding: 4rem;
+  text-align: center;
+}
+
+.solution-content {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(217, 188, 82, 0.15);
+  color: var(--brand-gold-dark);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.item-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.item-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--brand-gold);
+  font-weight: bold;
+}
+
+.format-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.format-tag {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
+  .solution-card {
+    grid-template-columns: 1fr;
+  }
+  .solution-content {
+    padding: 2rem;
+  }
+  .item-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 /* ------------------- RESPONSIVIDADE COMPLETA ------------------- */
 @media (max-width: 768px) {
   h1 {
