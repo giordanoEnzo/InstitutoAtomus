@@ -35,6 +35,7 @@ export default function NavbarMain() {
                 <div className={`nav-links ${menuOpen ? 'mobile-open' : ''}`}>
                     <Link href="/" className={pathname === '/' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Home</Link>
                     <Link href="/sobre" className={pathname === '/sobre' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Sobre</Link>
+                    <Link href="/treinamentos" className={pathname === '/treinamentos' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Treinamentos</Link>
                     <Link href="/nr-1" className={pathname === '/nr-1' ? 'active' : ''} onClick={() => setMenuOpen(false)}>NR-1</Link>
                     <Link href="/telemedicina" className={pathname === '/telemedicina' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Telemedicina</Link>
                     <Link href="/merylin-bento" className={pathname === '/merylin-bento' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Merylin Bento</Link>

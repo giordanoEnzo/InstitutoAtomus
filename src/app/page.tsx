@@ -167,8 +167,8 @@ export default function Home() {
                   <span className="format-tag">Workshops</span>
                   <span className="format-tag">Imersões</span>
                 </div>
-                <Link href="/contato" className="btn btn-primary" style={{ alignSelf: 'flex-start' }}>
-                  Solicitar Proposta
+                <Link href="/treinamentos" className="btn btn-primary" style={{ alignSelf: 'flex-start' }}>
+                  CONHECER TREINAMENTOS
                 </Link>
               </div>
             </div>
