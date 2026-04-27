@@ -15,7 +15,7 @@ export default function SobrePage() {
                 <div className="container" style={{ maxWidth: '900px' }}>
                     <div className="text-center" style={{ marginBottom: '4rem' }}>
                         <div className="divider" style={{ margin: '0 auto 2rem' }}></div>
-                        <h2 style={{ fontSize: '3rem' }}>Manifesto Átomus</h2>
+                        <h2 style={{ fontSize: '3rem' }}>Manifesto Atomus</h2>
                     </div>
                     
                     <div className="manifesto-content" style={{ fontSize: '1.25rem', lineHeight: '1.8', color: 'white' }}>

@@ -94,7 +94,7 @@ export default function Home() {
 
           <div className="text-center" style={{ marginTop: '5rem' }}>
             <h2 style={{ fontSize: '2.5rem', color: 'white' }}>NR-1 não é apenas adequação.<br /><span className="text-gold">É estrutura organizacional.</span></h2>
-            <p style={{ marginTop: '1.5rem', color: 'white' }}>Implementação completa com o Instituto ÁTOMUS.</p>
+            <p style={{ marginTop: '1.5rem', color: 'white' }}>Implementação completa com o Instituto ATOMUS.</p>
           </div>
         </div>
       </section>

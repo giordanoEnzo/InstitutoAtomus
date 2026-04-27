@@ -3,7 +3,7 @@ import FooterMain from '@/components/FooterMain';
 import { Brain, GraduationCap, Calendar, CheckCircle2, ClipboardCheck, Users, Activity, BarChart3 } from 'lucide-react';
 
 export const metadata = {
-  title: 'NR-1 em Saúde Mental Corporativa | Instituto Átomus',
+  title: 'NR-1 em Saúde Mental Corporativa | Instituto Atomus',
   description: 'Sua empresa está preparada para a nova NR-1? Gestão de riscos psicossociais, capacitação e implementação estratégica.'
 };
 
@@ -128,11 +128,11 @@ export default function NR1Page() {
         </div>
       </section>
 
-      {/* Selo Oficial Átomus Section (Migrated from Home) */}
+      {/* Selo Oficial Atomus Section (Migrated from Home) */}
       <section className="section section-light" style={{ borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
         <div className="container">
           <div className="text-center" style={{ marginBottom: '4rem' }}>
-            <h2 className="text-gold" style={{ letterSpacing: '2px', fontWeight: 'bold' }}>SELO OFICIAL ÁTOMUS</h2>
+            <h2 className="text-gold" style={{ letterSpacing: '2px', fontWeight: 'bold' }}>SELO OFICIAL ATOMUS</h2>
             <h3 style={{ fontSize: '1.75rem', marginTop: '0.5rem' }}>"Certificado de Conformidade em Saúde Mental Corporativa"</h3>
             <div className="divider" style={{ margin: '1.5rem auto' }}></div>
           </div>
@@ -140,7 +140,7 @@ export default function NR1Page() {
           <div className="animate-fade-in-up" style={{ display: 'flex', justifyContent: 'center', marginBottom: '4rem' }}>
             <img 
               src="/selo-atomus.png" 
-              alt="Certificado de Conformidade Átomus" 
+              alt="Certificado de Conformidade Atomus" 
               style={{ width: '100%', maxWidth: '800px', borderRadius: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }} 
             />
           </div>
@@ -231,14 +231,14 @@ export default function NR1Page() {
 
             <div style={{ position: 'relative' }}>
               <div style={{ background: 'var(--bg-brand)', padding: '3rem', borderRadius: '20px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-                <h3 className="text-gold" style={{ marginBottom: '2rem', textAlign: 'center' }}>Ciclo de Adequação Átomus</h3>
+                <h3 className="text-gold" style={{ marginBottom: '2rem', textAlign: 'center' }}>Ciclo de Adequação Atomus</h3>
                 <div style={{ display: 'grid', gap: '1rem' }}>
                   {[
                     { text: "Mapeamento de Fatores Psicossociais", icon: <ClipboardCheck size={20} /> },
                     { text: "Avaliação de Riscos no GRO", icon: <BarChart3 size={20} /> },
                     { text: "Plano de Ação e Controle", icon: <CheckCircle2 size={20} /> },
                     { text: "Capacitação de Lideranças", icon: <Users size={20} /> },
-                    { text: "Certificação Selo Átomus", icon: <GraduationCap size={20} /> }
+                    { text: "Certificação Selo Atomus", icon: <GraduationCap size={20} /> }
                   ].map((item, i) => (
                     <div key={i} style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem 1.5rem', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '1rem', color: 'white' }}>
                       <span style={{ color: 'var(--brand-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{item.icon}</span>
@@ -262,7 +262,7 @@ export default function NR1Page() {
             A adequação não deve ser vista apenas como exigência legal, mas como uma oportunidade de estruturar a saúde mental, fortalecer lideranças e proteger a cultura organizacional da sua empresa.
           </p>
           <div className="divider" style={{ margin: '0 auto 3rem' }}></div>
-          <h3 style={{ color: 'white' }}>Implementação completa com o Instituto ÁTOMUS.</h3>
+          <h3 style={{ color: 'white' }}>Implementação completa com o Instituto ATOMUS.</h3>
           <div style={{ marginTop: '3rem' }}>
             <Link href="/contato" className="btn btn-primary" style={{ padding: '1.5rem 3rem' }}>Falar com Especialistas</Link>
           </div>

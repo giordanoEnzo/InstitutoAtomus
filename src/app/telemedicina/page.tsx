@@ -3,8 +3,8 @@ import FooterMain from '@/components/FooterMain';
 import { Activity, ShieldCheck, Zap, Heart, Users, TrendingDown, Clock, MapPinOff } from 'lucide-react';
 
 export const metadata = {
-  title: 'Telemedicina Corporativa | Instituto Átomus',
-  description: 'Cuidado acessível, prevenção inteligente e mais produtividade para sua empresa com a Telemedicina Corporativa do Instituto Átomus.'
+  title: 'Telemedicina Corporativa | Instituto Atomus',
+  description: 'Cuidado acessível, prevenção inteligente e mais produtividade para sua empresa com a Telemedicina Corporativa do Instituto Atomus.'
 };
 
 export default function TelemedicinaPage() {
@@ -73,7 +73,7 @@ export default function TelemedicinaPage() {
       <section className="section section-dark" style={{ background: '#0f1c15' }}>
         <div className="container">
           <div className="text-center" style={{ marginBottom: '4rem' }}>
-            <h2 className="text-gold">Abordagem Integrada Átomus</h2>
+            <h2 className="text-gold">Abordagem Integrada Atomus</h2>
             <div className="divider" style={{ margin: '1.5rem auto' }}></div>
             <p style={{ color: 'white', maxWidth: '700px', margin: '0 auto' }}>
               Não oferecemos apenas uma ferramenta, oferecemos uma estratégia de saúde.

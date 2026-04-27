@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Treinamentos Empresariais | Instituto Átomus',
+  title: 'Treinamentos Empresariais | Instituto Atomus',
   description: 'Desenvolvimento de pessoas e estruturação de resultados com base em neurociência, inteligência emocional e gestão estratégica.'
 };
 
@@ -125,7 +125,7 @@ export default function TreinamentosPage() {
             
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
               {[
-                { title: 'Neurociência', icon: <Brain />, text: 'Foco no funcionamento cerebral para mudanças Reais.' },
+                { title: 'Neurociência', icon: <Brain />, text: 'Foco no funcionamento cerebral para mudanças reais.' },
                 { title: 'Gestão Estratégica', icon: <TrendingUp />, text: 'Gestão focada em comportamentos e resultados.' },
                 { title: 'Pragmatismo', icon: <Target />, text: 'Conteúdo direto para aplicação imediata.' },
                 { title: 'Saúde Mental', icon: <ShieldCheck />, text: 'Prevenção e sustentabilidade emocional.' }
