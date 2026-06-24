@@ -278,11 +278,12 @@ main>div>.section:first-of-type {
   font-size: 1.5rem;
   color: var(--text-secondary);
   letter-spacing: 2px;
+  flex-shrink: 0;
 }
 
 .navbar .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -616,6 +617,8 @@ main>div>.section:first-of-type {
 
   .navbar .logo img {
     height: 55px !important;
+    width: auto !important;
+    object-fit: contain;
   }
 
   /* Footer */

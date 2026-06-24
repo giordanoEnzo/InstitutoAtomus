@@ -13,7 +13,7 @@ export default function FooterMain({ backgroundColor }: FooterProps) {
         <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
           <div>
             <Link href="/" style={{ display: 'block', marginBottom: '1.5rem' }}>
-              <img src="/logo.png" alt="ATOMUS Logo" style={{ height: '60px', width: 'auto' }} />
+              <img src="/logo.png" alt="ATOMUS Logo" style={{ height: '60px', width: 'auto', objectFit: 'contain' }} />
             </Link>
             <p style={{ fontSize: '0.9rem', marginTop: '1rem', color: 'white' }}>Instituto de Desenvolvimento Empresarial</p>
             <p style={{ fontSize: '0.8rem', color: 'var(--brand-gold)' }}>Onde existe direção, nasce a liderança.</p>
@@ -25,6 +25,8 @@ export default function FooterMain({ backgroundColor }: FooterProps) {
               <li><Link href="/merylin-bento" style={{ fontSize: '0.9rem', color: 'white' }}>Merylin Bento</Link></li>
               <li><Link href="/noticias" style={{ fontSize: '0.9rem', color: 'white' }}>Notícias</Link></li>
               <li><Link href="/nr-1" style={{ fontSize: '0.9rem', color: 'white' }}>NR-1 em Saúde Mental</Link></li>
+              <li><Link href="/excelencia-organizacional" style={{ fontSize: '0.9rem', color: 'white' }}>Excelência Organizacional</Link></li>
+              <li><Link href="/parceiros" style={{ fontSize: '0.9rem', color: 'white' }}>Parceiros</Link></li>
             </ul>
           </div>
           <div>

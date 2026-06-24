@@ -53,7 +53,7 @@ export default function Home() {
               <h2 className="text-gold">NR-1 em Saúde Mental Corporativa</h2>
               <h3 style={{ color: 'white', marginBottom: '1.5rem' }}>Sua empresa está preparada para atender às novas exigências da NR-1?</h3>
               <p style={{ color: 'white' }}>
-                A atualização da NR-1, que inclui a obrigatoriedade da gestão de riscos psicossociais no ambiente de trabalho (assédio, sobrecarga, etc.), entrará em vigor de forma plena em <span className="text-gold" style={{ fontWeight: 'bold' }}>25 de maio de 2026</span>.
+                A atualização da NR-1, que inclui a obrigatoriedade da gestão de riscos psicossociais no ambiente de trabalho (assédio, sobrecarga, etc.), entrou em vigor em <span className="text-gold" style={{ fontWeight: 'bold' }}>26 de maio de 2026</span>, com prazo limite de adequação de 90 dias (até <span className="text-gold" style={{ fontWeight: 'bold' }}>26 de agosto de 2026</span>).
               </p>
               
               <div style={{ marginTop: '2rem', display: 'grid', gap: '2rem' }}>
@@ -67,7 +67,7 @@ export default function Home() {
                 </div>
                 <div style={{ padding: '1.5rem', borderLeft: '3px solid var(--brand-gold)', background: 'rgba(255,255,255,0.05)' }}>
                   <h4 style={{ color: 'var(--brand-gold)', marginBottom: '0.5rem' }}>3) Prazo e Aplicação</h4>
-                  <p style={{ fontSize: '1rem', margin: 0, color: 'white' }}>Fiscalização com possíveis penalidades a partir de 26 de maio de 2026.</p>
+                  <p style={{ fontSize: '1rem', margin: 0, color: 'white' }}>Fiscalização plena a partir do fim do prazo de adequação de 90 dias em 26 de agosto de 2026.</p>
                 </div>
               </div>
             </div>

@@ -58,7 +58,7 @@ export default function LoginPage() {
                 border: '1px solid #222'
             }}>
                 <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-                    <img src="/logo.png" alt="ATOMUS Logo" style={{ height: '64px', marginBottom: '1.5rem', margin: '0 auto', filter: 'drop-shadow(0 0 10px rgba(220,180,90,0.2))' }} />
+                    <img src="/logo.png" alt="ATOMUS Logo" style={{ height: '64px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem', margin: '0 auto', filter: 'drop-shadow(0 0 10px rgba(220,180,90,0.2))' }} />
                     <h1 style={{ fontSize: '1.25rem', color: '#fff', fontWeight: '500', margin: 0 }}>
                         Bem-vindo de volta
                     </h1>

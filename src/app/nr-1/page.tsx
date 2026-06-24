@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import FooterMain from '@/components/FooterMain';
-import { Brain, GraduationCap, Calendar, CheckCircle2, ClipboardCheck, Users, Activity, BarChart3 } from 'lucide-react';
+import { Brain, GraduationCap, Calendar, CheckCircle2, ClipboardCheck, Users, Activity, BarChart3, FileText } from 'lucide-react';
 
 export const metadata = {
   title: 'NR-1 em Saúde Mental Corporativa | Instituto Atomus',
@@ -19,7 +19,7 @@ export default function NR1Page() {
             NR-1 em <span className="text-gold">Saúde Mental Corporativa</span>
           </h1>
           <p style={{ maxWidth: '700px', fontSize: '1.25rem', color: 'var(--text-light)', marginBottom: '3rem' }}>
-            A atualização da Norma Regulamentadora nº 1 (NR-1) traz a obrigatoriedade da gestão de riscos psicossociais. Sua empresa tem até <span className="text-gold" style={{ fontWeight: 'bold' }}>25 de maio de 2026</span> para se adequar plenamente.
+            A atualização da Norma Regulamentadora nº 1 (NR-1) traz a obrigatoriedade da gestão de riscos psicossociais. A norma entrou em vigor no dia <span className="text-gold" style={{ fontWeight: 'bold' }}>26 de maio de 2026</span>, e a partir desta data sua empresa tem um prazo de <span className="text-gold" style={{ fontWeight: 'bold' }}>90 dias</span> para a devida adequação (até <span className="text-gold" style={{ fontWeight: 'bold' }}>26 de agosto de 2026</span>).
           </p>
           <div className="flex-mobile" style={{ display: 'flex', gap: '1rem' }}>
             <Link href="/contato" className="btn btn-primary">Diagnóstico NR-1</Link>
@@ -121,90 +121,9 @@ export default function NR1Page() {
               </div>
               <h3 className="text-gold">Vigência Plena</h3>
               <p style={{ color: 'white', fontSize: '1rem' }}>
-                A fiscalização e penalidades baseadas na nova redação (Portaria MTE nº 1.419/2024) passarão a valer a partir de <strong>26 de maio de 2026</strong>.
+                A nova redação da NR-1 (Portaria MTE nº 1.419/2024) entrou em vigor em <strong>26 de maio de 2026</strong>, concedendo um prazo de <strong>90 dias</strong> para adequação, com fiscalização plena a partir de <strong>26 de agosto de 2026</strong>.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Selo Oficial Atomus Section (Migrated from Home) */}
-      <section className="section section-light" style={{ borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
-        <div className="container">
-          <div className="text-center" style={{ marginBottom: '4rem' }}>
-            <h2 className="text-gold" style={{ letterSpacing: '2px', fontWeight: 'bold' }}>SELO OFICIAL ATOMUS</h2>
-            <h3 style={{ fontSize: '1.75rem', marginTop: '0.5rem' }}>"Certificado de Conformidade em Saúde Mental Corporativa"</h3>
-            <div className="divider" style={{ margin: '1.5rem auto' }}></div>
-          </div>
-
-          <div className="animate-fade-in-up" style={{ display: 'flex', justifyContent: 'center', marginBottom: '4rem' }}>
-            <img 
-              src="/selo-atomus.png" 
-              alt="Certificado de Conformidade Atomus" 
-              style={{ width: '100%', maxWidth: '800px', borderRadius: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }} 
-            />
-          </div>
-
-          <div className="grid grid-1" style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <div>
-              <p style={{ fontWeight: '500', fontSize: '1.25rem', textAlign: 'center' }}>
-                Esse selo certifica empresas que Implementaram a NR-1 de forma estruturada e desenvolveram liderança ativa na promoção da saúde mental organizacional.
-              </p>
-              <p style={{ textAlign: 'center' }}>
-                Empresas que possuem uma Cultura Mental Consolidada com indicadores, acompanhamento contínuo e programa ativo.
-              </p>
-              <p style={{ fontStyle: 'italic', color: 'var(--brand-gold-dark)', fontWeight: 'bold', textAlign: 'center', fontSize: '1.2rem', marginTop: '1.5rem' }}>
-                “Nosso objetivo é conduzir sua empresa à certificação institucional do Selo Atomus.”
-              </p>
-            </div>
-          </div>
-
-          <div style={{ marginTop: '5rem' }}>
-            <h3 style={{ borderLeft: '4px solid var(--brand-gold)', paddingLeft: '1rem', marginBottom: '2rem' }}>Segurança Jurídica e Prevenção de Riscos Trabalhistas</h3>
-            <div className="grid grid-2">
-              <div>
-                <p>
-                  A implementação de práticas estruturadas de Saúde Mental Corporativa não é apenas uma ação de cuidado humano — é também uma estratégia de gestão de riscos organizacionais.
-                </p>
-                <p>
-                  Empresas que investem na identificação e no gerenciamento de riscos psicossociais no ambiente de trabalho, conforme previsto nas diretrizes da Norma Regulamentadora nº 1 (NR-1), demonstram compromisso com a prevenção, a responsabilidade organizacional e a promoção de ambientes laborais mais seguros.
-                </p>
-              </div>
-              <div style={{ background: 'var(--bg-primary)', padding: '2rem', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
-                <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>A certificação do Instituto Atomus reconhece empresas que adotam práticas estruturadas voltadas à:</p>
-                <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem' }}>
-                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Identificação de fatores de risco psicossocial</li>
-                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Promoção da saúde mental no trabalho</li>
-                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Desenvolvimento de lideranças conscientes</li>
-                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Fortalecimento de uma cultura organizacional saudável</li>
-                  <li><span className="text-gold" style={{ marginRight: '0.5rem' }}>•</span> Implementação de ações preventivas de bem-estar e gestão emocional</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="section-brand" style={{ marginTop: '4rem', padding: '3rem', borderRadius: '4px' }}>
-            <h3 style={{ color: 'var(--brand-gold)', marginBottom: '2rem' }}>Valor Estratégico da Certificação</h3>
-            <div className="grid grid-2">
-              <p style={{ color: 'white' }}>
-                Ao implementar um programa estruturado de Saúde Mental Corporativa, a empresa passa a possuir um conjunto de práticas que fortalece a governança organizacional e auxilia na gestão de riscos psicossociais.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem' }}>
-                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Evidências documentadas de ações preventivas</li>
-                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Programas de promoção de saúde e bem-estar</li>
-                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Capacitação de lideranças</li>
-                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Registro de iniciativas de cuidado organizacional</li>
-                <li style={{ display: 'flex', gap: '0.5rem', color: 'white' }}><span className="text-gold">✔</span> Indicadores de gestão relacionados ao clima e saúde emocional</li>
-              </ul>
-            </div>
-          </div>
-
-          <div style={{ marginTop: '3rem', padding: '2rem', border: '1px solid #ddd', borderRadius: '4px', fontSize: '0.9rem', backgroundColor: '#f9f9f9' }}>
-            <p style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--bg-dark)' }}>Observação Institucional</p>
-            <p style={{ margin: 0, color: '#666' }}>
-              A certificação concedida pelo Instituto Atomus reconhece a implementação de práticas estruturadas de promoção da saúde mental no ambiente corporativo.
-              Embora tais iniciativas contribuam para a prevenção de riscos psicossociais e fortalecimento da cultura organizacional, a certificação não substitui as responsabilidades legais da empresa nem constitui garantia de inexistência de demandas judiciais.
-            </p>
           </div>
         </div>
       </section>
@@ -248,6 +167,80 @@ export default function NR1Page() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fluxo de Aplicação do DRPS Section */}
+      <section className="section section-light" style={{ borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: '4rem' }}>
+            <h2 className="text-gold" style={{ letterSpacing: '2px', fontWeight: 'bold' }}>FLUXO DE APLICAÇÃO DO DRPS</h2>
+            <h3 style={{ fontSize: '1.75rem', marginTop: '0.5rem' }}>Diagnóstico de Riscos Psicossociais na Prática</h3>
+            <div className="divider" style={{ margin: '1.5rem auto' }}></div>
+            <p style={{ maxWidth: '800px', margin: '0 auto' }}>
+              A implementação do DRPS segue um fluxo estruturado e metodológico, assegurando a precisão técnica no mapeamento e a segurança jurídica nas tomadas de decisão.
+            </p>
+          </div>
+
+          <div className="animate-fade-in-up" style={{ display: 'flex', justifyContent: 'center', marginBottom: '5rem' }}>
+            <img 
+              src="/fluxo-drps.jpg" 
+              alt="Fluxo de Aplicação do DRPS - Instituto Atomus" 
+              style={{ width: '100%', maxWidth: '850px', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.12)' }} 
+            />
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '2rem' }}>
+            {[
+              {
+                step: "01",
+                title: "Alinhamento Inicial",
+                subtitle: "Reunião e planejamento",
+                description: "Etapa de abertura onde alinhamos as diretrizes estratégicas com a liderança, estabelecemos o cronograma de atividades e planejamos a comunicação de engajamento interno.",
+                icon: <Users size={32} className="text-gold" />
+              },
+              {
+                step: "02",
+                title: "Coleta de Dados",
+                subtitle: "Questionário Confidencial",
+                description: "Aplicação de questionários estruturados e confidenciais para mapear de forma segura, anônima e estatisticamente relevante os fatores psicossociais da organização.",
+                icon: <ClipboardCheck size={32} className="text-gold" />
+              },
+              {
+                step: "03",
+                title: "Análise Integrada",
+                subtitle: "Dados e Entrevistas Técnicas",
+                description: "Cruzamento inteligente das métricas da coleta quantitativa com entrevistas técnicas qualitativas feitas por especialistas, capturando a realidade operacional fiel da empresa.",
+                icon: <BarChart3 size={32} className="text-gold" />
+              },
+              {
+                step: "04",
+                title: "Classificação de Risco",
+                subtitle: "Matriz NR 01",
+                description: "Enquadramento de cada risco identificado na Matriz de Riscos da NR-01, definindo a severidade e probabilidade para alimentar diretamente o GRO/PGR corporativo.",
+                icon: <Brain size={32} className="text-gold" />
+              },
+              {
+                step: "05",
+                title: "Relatório Técnico",
+                subtitle: "Síntese e Recomendações",
+                description: "Entrega do laudo técnico com o diagnóstico final estruturado, plano de ação corretivo e recomendações claras de curto, médio e longo prazo para a governança de RH.",
+                icon: <FileText size={32} className="text-gold" />
+              }
+            ].map((item, index) => (
+              <div key={index} className="card-hover" style={{ background: 'var(--bg-primary)', padding: '2.5rem 2rem', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', position: 'relative', borderTop: '4px solid var(--brand-gold)' }}>
+                <span style={{ position: 'absolute', top: '1rem', right: '1.5rem', fontSize: '2.5rem', fontWeight: 'bold', color: 'rgba(217, 188, 82, 0.15)', fontFamily: 'var(--font-heading)' }}>
+                  {item.step}
+                </span>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
+                  {item.icon}
+                </div>
+                <h4 style={{ fontSize: '1.25rem', marginBottom: '0.25rem', color: 'var(--bg-dark)' }}>{item.title}</h4>
+                <p style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'var(--brand-gold-dark)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '1rem' }}>{item.subtitle}</p>
+                <p style={{ fontSize: '0.95rem', color: 'var(--text-primary)', margin: 0, lineHeight: '1.5' }}>{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
