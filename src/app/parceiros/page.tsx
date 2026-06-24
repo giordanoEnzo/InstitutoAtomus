@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import FooterMain from '@/components/FooterMain';
 import { Network, Users, ShieldCheck, Briefcase } from 'lucide-react';
+import ParceirosCategorias from '@/components/ParceirosCategorias';
 
 export const metadata = {
   title: 'Parceiros Atomus | Ecossistema de Soluções Inteligentes',
@@ -45,7 +46,7 @@ export default function ParceirosPage() {
             </p>
             <div style={{ marginTop: '3rem', padding: '2rem', background: 'var(--bg-brand)', borderRadius: '12px', color: 'white', display: 'inline-block' }}>
               <h3 style={{ margin: 0, fontSize: '1.5rem', color: 'var(--brand-gold)' }}>Nosso objetivo é simples:</h3>
-              <p style={{ margin: '0.5rem 0 0 0', fontSize: '1.2rem', fontWeight: '500' }}>Facilitar conexões que fortaleçam empresas!</p>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '1.2rem', fontWeight: '500', color: 'var(--text-light)' }}>Facilitar conexões que fortaleçam empresas!</p>
             </div>
           </div>
         </div>
@@ -101,6 +102,20 @@ export default function ParceirosPage() {
              </div>
            </div>
          </div>
+      </section>
+
+      {/* Categorias de Parceiros Section */}
+      <section className="section section-light" style={{ padding: '6rem 0', borderTop: '1px solid #e0e0e0' }}>
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: '4.5rem' }}>
+            <h2 style={{ fontSize: '2.5rem', color: 'var(--bg-dark)' }}>Nossas Categorias de Parceiros</h2>
+            <div className="divider" style={{ margin: '1.5rem auto' }}></div>
+            <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
+              Explore as diversas especialidades em nosso ecossistema de parceiros e veja como cada área agrega valor e segurança ao seu negócio.
+            </p>
+          </div>
+          <ParceirosCategorias />
+        </div>
       </section>
 
       {/* Call to Action Section */}
